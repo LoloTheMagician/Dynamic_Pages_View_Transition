@@ -1,0 +1,29 @@
+---
+interface Props {
+    name: String;
+    price: number;
+}
+
+const { name, price }: Props = Astro.props;
+---
+
+<article>
+    <h2>
+        <a href={`./products/${name}`} transition:name={`${name}`}>{name}</a>
+    </h2>
+    <p>{price}</p>
+</article>
+
+<style>
+    article {
+        border-block-start: 1px solid black;
+        padding-inline-start: 1rem;
+        padding-block: 1rem;
+    }
+    article:last-child {
+        border-block-end: 1px solid black;
+    }
+    ::view-transition{
+        transition: all 500ms ease-out;
+    }
+</style>
