@@ -1,0 +1,35 @@
+---
+import { db, Product } from "astro:db";
+import Layout from "../../layouts/Layout.astro";
+
+export const getStaticPaths = async () => {
+    const products = await db.select().from(Product);
+    return products.map(({ name, price }) => {
+        return {
+            params: { name },
+            props: { price },
+        };
+    });
+};
+
+const { name } = Astro.params;
+const { price } = Astro.props;
+---
+
+<Layout>
+    <body>
+        <p transition:name=`${name}`>{name}</p>
+        <p>{price}</p>
+        <a href="/" transition:name="Binary">Go Home!</a>
+    </body>
+</Layout>
+
+<style>
+    body {
+        height: 100dvh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
