@@ -1,0 +1,22 @@
+@import url('./panchang.css');
+
+:root {
+    font-family: 'Panchang-Variable';
+    font-weight: 300;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Panchang-SemiBold';
+    font-size: 4rem;
+}
+
+h2 {
+    font-family: 'Panchang-Light';
+    font-size: 1rem;
+}
