@@ -20,6 +20,7 @@ const { price } = Astro.props;
     <body>
         <p transition:name=`${name}`>{name}</p>
         <p>{price}</p>
+        <div class="img" transition:name={`img-${name}`}></div>
         <a href="/" transition:name="Binary">Go Home!</a>
     </body>
 </Layout>
@@ -31,5 +32,9 @@ const { price } = Astro.props;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+    .img{
+        width: 300px;
+        height: 300px;
     }
 </style>
